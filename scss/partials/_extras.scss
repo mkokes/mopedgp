@@ -1,0 +1,11 @@
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter:alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin background-opacity($color, $opacity: .3) {
+  background: $color;
+  /* The Fallback */
+  background: rgba($color, $opacity);
+}
