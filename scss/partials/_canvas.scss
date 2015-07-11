@@ -1,17 +1,20 @@
 #canvas {
   @include outer-container;
+  background: url("/wp-content/themes/mopedgp/img/bg.jpg") fixed;
   width: 100%;
   &.open {
     margin-left: 75%;
   }
   
-@include media($medium-up) {
+
+  @include media($medium-up) {
     &.open {
       margin-left: 50%;
     }
   }
   
-@include media($large-up) {
+
+  @include media($large-up) {
     &.open {
       margin-left: 25%;
     }
@@ -28,7 +31,8 @@
     display: inline;
   }
   
-.links-menu {
+
+  .links-menu {
     display: inline;
     ul {
       display: inherit;
@@ -39,7 +43,8 @@
           content: "|";
         }
         
-&:last-child {
+
+        &:last-child {
           &:after {
             content: "";
           }
@@ -48,17 +53,18 @@
     }
   }
   
-@include media($large-up) {
+
+  @include media($large-up) {
     display: block;
   }
 }
 
 
 //Logobar
-#logobar {
+#site-header {
   padding: rem(15);
   overflow: hidden;
-  background: $dark-gray;
+  background: url("/wp-content/themes/mopedgp/img/header-bg.png");
   line-height: 0;
   &.fixed {
     
@@ -71,6 +77,7 @@
   margin-left: rem(16);
   width: rem(40);
 }
+
 
 .nav-icon:after,
 .nav-icon:before,
@@ -106,6 +113,7 @@
   transform: scale(0);
 }
 
+
 .nav-description {
   color: $offwhite;
   position: relative;
@@ -117,12 +125,14 @@
   }
 }
 
+
 #top-navicon {
   @include span-columns(2);
   @include media($large-up) {
     @include span-columns(3);
   }
 }
+
 
 #top-sitelogo {
   @include span-columns(9);
@@ -131,22 +141,26 @@
     margin: 0 auto;
   }
   
-svg {
+
+  svg {
     display: block;
     margin: 0 auto;
     g {
       fill: #fff;
     }
     
-line {
+
+    line {
       stroke: #fff;
     }
   }
   
-@include media($large-up) {
+
+  @include media($large-up) {
     @include span-columns(6);
   }
 }
+
 
 #top-sitesearch {
   display: none;
@@ -159,7 +173,8 @@ line {
     }
   }
   
-svg {
+
+  svg {
     float: right;
     margin: rem(8) rem(10) 0 0;
     fill: $offwhite;
@@ -182,13 +197,15 @@ svg {
     height: rem(50);
   }
   
-.mobile-ad {
+
+  .mobile-ad {
     -webkit-box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
     -moz-box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
     box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
   }
   
-@include media($large-up) {
+
+  @include media($large-up) {
     position: static;
     .billboard {
       font-size: rem(40);
@@ -210,6 +227,7 @@ svg {
     margin-bottom: rem(20);
   }
 }
+
 
 .widgetized-area {
   margin-bottom: rem(20);
@@ -234,7 +252,8 @@ svg {
       }
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(8);
       #featured-slider,
       #featured-stories {
@@ -243,7 +262,8 @@ svg {
     }
   }
   
-.col2 {
+
+  .col2 {
     margin-bottom: rem(10);
     padding: 0 rem(5);
     @include media($medium-up) {
@@ -255,7 +275,8 @@ svg {
       }
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(4);
       #widget1a,
       #widget1b {
@@ -263,12 +284,14 @@ svg {
       }
     }
     
-aside {
+
+    aside {
       max-width: rem(320);
       margin: rem(10) auto;
     }
   }
 }
+
 
 #row2 {
   @include outer-container;
@@ -281,12 +304,14 @@ aside {
       padding-right: rem(10);
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(8);
     }
   }
   
-.col2 {
+
+  .col2 {
     margin-bottom: rem(10);
     overflow: hidden;
     aside {
@@ -294,15 +319,18 @@ aside {
       margin: 0 auto;
     }
     
-@include media($medium-up) {
+
+    @include media($medium-up) {
       @include span-columns(8);
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(4);
     }
   }
 }
+
 
 .section-wrapper {
   @include outer-container;
@@ -314,12 +342,14 @@ aside {
       @include span-columns(4);
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(4);
     }
   }
   
-.col2 {
+
+  .col2 {
     @include span-columns(12);
     margin-bottom: rem(10);
     padding: 0 rem(5);
@@ -328,19 +358,22 @@ aside {
       @include omega();
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(4);
     }
   }
   
-.col3 {
+
+  .col3 {
     margin-bottom: rem(10);
     overflow: hidden;
     div {
       overflow: hidden;
     }
     
-aside {
+
+    aside {
       display: block;
       width: rem(300);
       margin: 0 auto;
@@ -351,11 +384,13 @@ aside {
       @include span-columns(8);
     }
     
-@include media($large-up) {
+
+    @include media($large-up) {
       @include span-columns(4);
     }
     
-.section1a-widget,
+
+    .section1a-widget,
     .section1b-widget {
       max-width: rem(320);
       margin: 0 auto;
@@ -371,16 +406,19 @@ aside {
     margin: 0 auto rem(10);
   }
   
-h1 {
+
+  h1 {
     font-size: rem(24);
     line-height: rem(32);
     padding: rem(5);
   }
   
-@include media($medium-up) {
+
+  @include media($medium-up) {
     margin-bottom: rem(10);
   }
 }
+
 
 #featured-stories {
   padding: rem(5);
@@ -394,16 +432,19 @@ h1 {
       border-left: rem(4) solid $gold;
     }
     
-&:nth-child(3) {
+
+    &:nth-child(3) {
       border-left: rem(4) solid $green;
     }
     
-&:nth-child(4) {
+
+    &:nth-child(4) {
       border-left: rem(4) solid $red;
     }
   }
   
-.current-story {
+
+  .current-story {
     background-color: $light-gray;
   }
 }
@@ -418,7 +459,8 @@ h1 {
     color: $offwhite;
   }
   
-@include media($medium-up) {
+
+  @include media($medium-up) {
     font-size: rem(30);
   }
 }
@@ -435,20 +477,23 @@ footer {
       margin: rem(40) auto rem(20);
     }
     
-svg {
+
+    svg {
       display: block;
       margin: rem(40) auto rem(20);
       g {
         fill: #000;
       }
       
-line {
+
+      line {
         stroke: #000;
       }
     }
   }
   
-.links-menu-wrapper {
+
+  .links-menu-wrapper {
     display: block;
     margin-bottom: rem(20);
     .links-menu-intro {
@@ -456,7 +501,8 @@ line {
     }
   }
   
-@include media($medium-up) {
+
+  @include media($medium-up) {
     margin-bottom: rem(30);
   }
 }
@@ -480,7 +526,8 @@ line {
     display: block;
   }
   
-svg {
+
+  svg {
     height: rem(26);
     width: rem(26);
     fill: $medium-gray;
