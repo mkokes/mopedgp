@@ -20,7 +20,7 @@ if ( ! function_exists( 'mopedgp_setup' ) ) :
 
 	//Menus
 		register_nav_menus( array(
-			'offcanvas' => __( 'Off Canvas Menu', 'mopedgp' ),
+			'offcanvas' => __( 'Off Canvas Menu', 'mopedgp' )
 			) );
 
 	//Widgetized Areas
@@ -34,6 +34,33 @@ if ( ! function_exists( 'mopedgp_setup' ) ) :
 				'before_title'  => '<h2>',
 				'after_title'   => '</h2>',
 				) );
+				register_sidebar( array(
+					'name'          => 'Frontpage 1',
+					'id'            => 'frontpage1',
+					'class'			=> 'widgetized-area',
+					'before_widget' => '<aside class="frontpage-widget widget">',
+					'after_widget'  => '</aside>',
+					'before_title'  => '<h2>',
+					'after_title'   => '</h2>',
+					) );
+					register_sidebar( array(
+						'name'          => 'Frontpage 2',
+						'id'            => 'frontpage2',
+						'class'			=> 'widgetized-area',
+						'before_widget' => '<aside class="frontpage-widget widget">',
+						'after_widget'  => '</aside>',
+						'before_title'  => '<h2>',
+						'after_title'   => '</h2>',
+						) );
+						register_sidebar( array(
+							'name'          => 'Frontpage 3',
+							'id'            => 'frontpage3',
+							'class'			=> 'widgetized-area',
+							'before_widget' => '<aside class="frontpage-widget widget">',
+							'after_widget'  => '</aside>',
+							'before_title'  => '<h2>',
+							'after_title'   => '</h2>',
+							) );
 		}
 	}
 	endif;
@@ -56,6 +83,7 @@ if ( ! function_exists( 'mopedgp_scripts' ) ) :
 /**
 * Helper Functions
 */
+
 //Retrieve Tag IDs
 function get_tag_id_by_name( $tag_name )
 {
@@ -64,6 +92,7 @@ function get_tag_id_by_name( $tag_name )
 
 	return $tag_ID;
 }
+
 //Retrieve Category IDs
 function get_cat_id_by_name( $cat_name )
 {
@@ -72,7 +101,10 @@ function get_cat_id_by_name( $cat_name )
 
 	return $cat_ID;
 }
-//Better Excerpt
+
+/**
+* Better Excerpt
+*/
 function new_excerpt_more( $more ) {
 	return '...';
 }
@@ -93,3 +125,13 @@ function better_excerpt( $length = 300 ) {
 
 	return $trimmed_text;
 }
+
+/**
+* Advanced Custom Fields
+*/
+include ( get_template_directory().'/components/customfields.php' );
+
+/**
+* Extend Wordpress Nav Walker to include depth in sub-menus
+**/
+include ( get_template_directory().'/components/menu-walker.php' );
