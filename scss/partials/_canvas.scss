@@ -1,6 +1,7 @@
 #canvas {
   @include outer-container;
-  background: url("/wp-content/themes/mopedgp/img/bg.jpg") fixed;
+  background: url("/wp-content/themes/mopedgp/img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
   width: 100%;
   &.open {
     margin-left: 75%;
@@ -462,48 +463,6 @@
 
   @include media($medium-up) {
     font-size: rem(30);
-  }
-}
-
-
-//Widget Styling
-//footer
-footer {
-  text-align: center;
-  margin-bottom: rem(70);
-  #footer-sitelogo {
-    img {
-      display: block;
-      margin: rem(40) auto rem(20);
-    }
-    
-
-    svg {
-      display: block;
-      margin: rem(40) auto rem(20);
-      g {
-        fill: #000;
-      }
-      
-
-      line {
-        stroke: #000;
-      }
-    }
-  }
-  
-
-  .links-menu-wrapper {
-    display: block;
-    margin-bottom: rem(20);
-    .links-menu-intro {
-      display: none;
-    }
-  }
-  
-
-  @include media($medium-up) {
-    margin-bottom: rem(30);
   }
 }
 
