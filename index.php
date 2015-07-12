@@ -59,6 +59,8 @@
 							<?php endif; ?>
 				</div>
 				<footer id="site-footer">
+					<div class="footer-left">&copy; <?php echo date("Y"); ?> MopedGP</div>
+					<div class="footer-right"></div>
 					<?php wp_footer();?>
 				</footer>
 			</div>
