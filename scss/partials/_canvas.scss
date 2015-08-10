@@ -1,22 +1,23 @@
-#canvas {
-  @include outer-container;
+.canvas {
   background: url("/wp-content/themes/mopedgp/img/bg.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
+  z-index: -1;
+}
+
+.inner-canvas {
+  z-index: 1;
+
+  @include outer-container;
+
   &.open {
     margin-left: 75%;
-  }
-  
 
-  @include media($medium-up) {
-    &.open {
+    @include media($medium-up) {
       margin-left: 50%;
     }
-  }
-  
 
-  @include media($large-up) {
-    &.open {
+    @include media($large-up) {
       margin-left: 25%;
     }
   }
@@ -31,7 +32,7 @@
   .links-menu-intro {
     display: inline;
   }
-  
+
 
   .links-menu {
     display: inline;
@@ -43,7 +44,7 @@
           margin: 0 rem(2);
           content: "|";
         }
-        
+
 
         &:last-child {
           &:after {
@@ -53,7 +54,6 @@
       }
     }
   }
-  
 
   @include media($large-up) {
     display: block;
@@ -62,7 +62,7 @@
 
 
 //Logobar
-#site-header {
+.site-header {
   padding: rem(15);
   overflow: hidden;
   background: url("/wp-content/themes/mopedgp/img/header-bg.png");
@@ -77,140 +77,111 @@
       width: rem(1280);
     }
   }
-  
+
 
   //Navicon
   .nav-icon {
-    margin-left: rem(16);
-    width: rem(40);
+    cursor: pointer;
+    margin-left: rem(5);
+    width: rem(32);
+
+    @include media($medium-up) {
+      margin-left: rem(16);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
-  
+
 
   .nav-icon:after,
   .nav-icon:before,
   .nav-icon div {
-    background-color: $offwhite;
-    @include border-right-radius(rem(3));
     @include border-left-radius(rem(3));
+    @include border-right-radius(rem(3));
+    @include transition(all .2s ease-in-out);
+    background-color: $offwhite;
     content: '';
     display: block;
-    height: rem(5);
-    margin: rem(7) 0;
-    @include transition(all .2s ease-in-out);
+    height: rem(4);
+    margin: rem(5) 0;
   }
-  
+
 
   .open .nav-icon:before {
-    transform: translateY(rem(12)) rotate(135deg);
-    -moz-transform: translateY(rem(12)) rotate(135deg);
-    -webkit-transform: translateY(rem(12)) rotate(135deg);
+    -moz-transform: translateY(rem(9.25)) rotate(135deg);
+    -webkit-transform: translateY(rem(9.25)) rotate(135deg);
+    transform: translateY(rem(9.25)) rotate(135deg);
   }
-  
+
 
   .open .nav-icon:after {
-    transform: translateY(rem(-12)) rotate(-135deg);
-    -moz-transform: translateY(rem(-12)) rotate(-135deg);
-    -webkit-transform: translateY(rem(-12)) rotate(-135deg);
+    -moz-transform: translateY(rem(-9.25)) rotate(-135deg);
+    -webkit-transform: translateY(rem(-9.25)) rotate(-135deg);
+    transform: translateY(rem(-9.25)) rotate(-135deg);
   }
-  
+
 
   .open .nav-icon div {
     -moz-transform: scale(0);
     -webkit-transform: scale(0);
     transform: scale(0);
   }
-  
+
 
   .nav-description {
     color: $offwhite;
     position: relative;
     left: rem(80);
-    bottom: rem(20);
+    bottom: rem(12);
     display: none;
     @include media($large-up) {
       display: block;
     }
   }
-  
 
-  #top-navicon {
+
+  .top-navicon {
+    margin-top: rem(3);
     @include span-columns(2);
     @include media($large-up) {
       @include span-columns(3);
     }
   }
-  
 
-  #top-sitelogo {
+  .top-sitelogo {
     @include span-columns(9);
     img {
       display: block;
       margin: 0 auto;
     }
-    
+
 
     svg {
       display: block;
       margin: 0 auto;
       g {
-        fill: #fff;
+        fill: $white;
       }
-      
+
 
       line {
-        stroke: #fff;
+        stroke: $white;
       }
     }
-    
+
 
     @include media($large-up) {
       @include span-columns(6);
     }
   }
-  
-
-  #top-sitesearch {
-    display: none;
-    @include media($large-up) {
-      display: block;
-      @include span-columns(3);
-      @include omega();
-      img {
-        float: right;
-      }
-    }
-    
-
-    svg {
-      float: right;
-      margin: rem(8) rem(10) 0 0;
-      fill: $offwhite;
-      height: rem(30);
-      width: rem(30);
-    }
-  }
-  
 
   //Adslot
-  #top-adslot {
+  .top-adslot {
     position: fixed;
     bottom: 0;
     width: 100%;
-    .billboard {
-      margin: 0 auto;
-      text-align: center;
-      line-height: rem(50);
-      width: rem(320);
-      height: rem(50);
-    }
-    
-
-    .mobile-ad {
-      -webkit-box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
-      -moz-box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
-      box-shadow: -5px 2px 94px 0 rgba(0,0,0,0.48);
-    }
-    
 
     @include media($large-up) {
       position: static;
@@ -223,255 +194,7 @@
       }
     }
   }
-  
-
-  //Widget Styling
-  .widget {
-    h2 {
-      color: $blue;
-      border-bottom: $blue rem(3) solid;
-      font-size: rem(20);
-      margin-bottom: rem(20);
-    }
-  }
-  
-
-  .widgetized-area {
-    margin-bottom: rem(20);
-  }
-  
-
-  //Inner Column Settings
-  #row1 {
-    @include outer-container;
-    margin-bottom: rem(20);
-    
-    .col1 {
-      margin-bottom: rem(10);
-      padding: 0 rem(5);
-      @include media($medium-up) {
-        @include span-columns(8);
-        margin-bottom: rem(10);
-        padding-left: rem(10);
-        #featured-slider,
-        #featured-stories {
-          @include span-columns(4 of 8);
-        }
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(8);
-        #featured-slider,
-        #featured-stories {
-          @include span-columns(4 of 8);
-        }
-      }
-    }
-    
-
-    .col2 {
-      margin-bottom: rem(10);
-      padding: 0 rem(5);
-      @include media($medium-up) {
-        @include span-columns(8);
-        margin-bottom: rem(10);
-        #widget1a,
-        #widget1b {
-          @include span-columns(4 of 8);
-        }
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(4);
-        #widget1a,
-        #widget1b {
-          @include span-columns(4 of 4);
-        }
-      }
-      
-
-      aside {
-        max-width: rem(320);
-        margin: rem(10) auto;
-      }
-    }
-  }
-  
-
-  #row2 {
-    @include outer-container;
-    margin-bottom: rem(20);
-    .col1 {
-      margin-bottom: rem(10);
-      padding: 0 rem(5);
-      @include media($medium-up) {
-        @include span-columns(8);
-        padding-right: rem(10);
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(8);
-      }
-    }
-    
-
-    .col2 {
-      margin-bottom: rem(10);
-      overflow: hidden;
-      aside {
-        width: rem(300);
-        margin: 0 auto;
-      }
-      
-
-      @include media($medium-up) {
-        @include span-columns(8);
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(4);
-      }
-    }
-  }
-  
-
-  .section-wrapper {
-    @include outer-container;
-    .col1 {
-      @include span-columns(12);
-      margin-bottom: rem(10);
-      padding: 0 rem(5);
-      @include media($medium-up) {
-        @include span-columns(4);
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(4);
-      }
-    }
-    
-
-    .col2 {
-      @include span-columns(12);
-      margin-bottom: rem(10);
-      padding: 0 rem(5);
-      @include media($medium-up) {
-        @include span-columns(4);
-        @include omega();
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(4);
-      }
-    }
-    
-
-    .col3 {
-      margin-bottom: rem(10);
-      overflow: hidden;
-      div {
-        overflow: hidden;
-      }
-      
-
-      aside {
-        display: block;
-        width: rem(300);
-        margin: 0 auto;
-      }
-      
-@include span-columns(12);
-      @include media($medium-up) {
-        @include span-columns(8);
-      }
-      
-
-      @include media($large-up) {
-        @include span-columns(4);
-      }
-      
-
-      .section1a-widget,
-      .section1b-widget {
-        max-width: rem(320);
-        margin: 0 auto;
-      }
-    }
-  }
-  
-
-  //Featured Stories
-  #featured-slider {
-    img {
-      display: block;
-      margin: 0 auto rem(10);
-    }
-    
-
-    h1 {
-      font-size: rem(24);
-      line-height: rem(32);
-      padding: rem(5);
-    }
-    
-
-    @include media($medium-up) {
-      margin-bottom: rem(10);
-    }
-  }
-  
-
-  #featured-stories {
-    padding: rem(5);
-    .slider-story {
-      margin-bottom: rem(5);
-      padding: rem(5) rem(5) rem(5) rem(20);
-      line-height: rem(20);
-      min-height: rem(72);
-      border-left: rem(4) solid $dark-blue;
-      &:nth-child(2) {
-        border-left: rem(4) solid $gold;
-      }
-      
-
-      &:nth-child(3) {
-        border-left: rem(4) solid $green;
-      }
-      
-
-      &:nth-child(4) {
-        border-left: rem(4) solid $red;
-      }
-    }
-    
-
-    .current-story {
-      background-color: $light-gray;
-    }
-  }
-  
-
-  //Section
-  .section-title {
-    background-color: $medium-gray;
-    font-size: rem(20);
-    padding: rem(6) 0 rem(6) rem(20);
-    a {
-      color: $offwhite;
-    }
-    
-
-    @include media($medium-up) {
-      font-size: rem(30);
-    }
-  }
-  
+}
 
   //Scroll to top button
   #scrolltotop {
@@ -490,7 +213,7 @@
     &.show {
       display: block;
     }
-    
+
 
     svg {
       height: rem(26);
@@ -498,4 +221,3 @@
       fill: $medium-gray;
     }
   }
-}
