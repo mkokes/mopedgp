@@ -1,0 +1,74 @@
+.sticky,
+.bypostauthor {
+  position: static;
+}
+
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.alignleft {
+  display: block;
+  margin: 10px auto;
+  @include media($medium-up) {
+    float: left;
+    margin: 0 25.888px 16px 0;
+  }
+}
+
+
+.alignleft:after {
+  clear: both;
+}
+
+
+.alignright {
+  display: block;
+  margin: 20px auto;
+  @include media($medium-up) {
+    float: right;
+    margin: 0 0 16px 25.888px;
+  }
+}
+
+
+.alignright:after {
+  clear: both;
+}
+
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.wp-caption {
+  max-width: 100%;
+  padding: 4px;
+}
+
+
+.wp-caption .wp-caption-text {
+  color: $caption-color;
+  font-size: 12px;
+  font-style: italic;
+  line-height: auto;
+}
+
+
+.gallery-caption,
+.entry-caption {
+  font-style: italic;
+  font-size: 12px;
+  line-height: auto;
+  color: #757575;
+}
