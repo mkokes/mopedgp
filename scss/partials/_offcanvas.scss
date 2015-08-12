@@ -1,6 +1,13 @@
+//Structure
+.site-sharing {
+  margin: 0;
+  transition: margin, .3s,ease;
+}
+
+
 .offcanvas {
-  @include background-opacity($dark-gray, 0);
-  background: $light-gray;
+  @include background-opacity($black, 0);
+  background: $black;
   box-sizing: padding-box;
   height: 100%;
   left: 0;
@@ -8,9 +15,9 @@
   overflow-y: auto;
   position: fixed;
   top: 0;
+  transition: margin, .3s,linear;
   visibility: hidden;
   width: 75%;
-  z-index: 1;
 
   @include media($medium-up) {
     margin-left: -50%;
@@ -25,14 +32,13 @@
 
 
   &.open {
-    @include background-opacity($dark-gray, 1);
+    @include background-opacity($black, 1);
     margin-left: 0;
     visibility: visible;
   }
 
 
   &:after {
-    @include background(linear-gradient(to right, rgba(59, 59, 59, .28) 0%, rgba(59, 59, 59, .45) 41%, rgba(23, 23, 23, .69) 100%));
     content: '';
     height: 100%;
     position: absolute;
@@ -47,9 +53,17 @@
   }
 
 
+  .sub-menu {
+
+    li {
+      border: 0;
+      font-family: $base-font-family;
+    }
+  }
+
+
   li {
-    border-bottom: rem(1)solid #2e2e2e;
-    border-top: rem(1) solid #484848;
+    border-top: rem(1) dotted $dark-gray;
     color: $offwhite;
     display: block;
     padding: rem(10) 0;
@@ -60,17 +74,15 @@
     }
 
 
-    ul {
-      li {
-        border: 0;
-      }
+    &:last-child {
+      border-bottom: rem(1)dotted $dark-gray;
     }
   }
 
+.menu-item-has-children {
 
-  .menu-item-has-children {
     &:before {
-      border: 0.4em solid transparent;
+      border: rem(6) solid transparent;
       border-top-color: $offwhite;
       content: ' ';
       left: 75%;
@@ -82,31 +94,91 @@
 
 
     &.accordian {
+      a {
+        color: $blue;
+      }
 
-      &:before {
-        border-bottom-color: $dark-blue;
+
+      .sub-menu {
+
+        li {
+          border: 0;
+        }
+
+
+        a {
+          color: $offwhite;
+
+          &:hover {
+            color: $light-blue;
+          }
+        }
+
+
+        .depth-0 {
+          background-color: $medium-gray;
+        }
+
+
+        .depth-1 {
+          background-color: $dark-gray;
+          margin-top: rem(10);
+          padding-left: rem(16);
+
+          a {
+            color: $offwhite;
+            font-family: $base-font-family;
+            font-size: rem(14);
+          }
+        }
+
+
+        .menu-item-has-children.accordian {
+
+          a {
+            color: $blue;
+          }
+
+
+          .depth-1 {
+            a {
+              color: $offwhite;
+
+              &:hover {
+                color: $light-blue;
+              }
+            }
+          }
+        }
+      }
+
+&:before {
+        border-bottom-color: $blue;
         border-top-color: transparent;
         top: rem(-12);
       }
+    }
+  }
 
+.site-social {
+    margin: rem(20) auto 0;
+    text-align: center;
+    
+    .social-icon {
+      height: auto;
+      margin-right: rem(10);
+      width: rem(44);
 
-      a {
-        color: $dark-blue;
-      }
-
-
-      .sub-menu a {
-        color: $offwhite;
-        &:hover {
-          color: $light-blue;
-        }
+      svg {
+        height: 44px;
+        width: 44px;
       }
     }
   }
 }
 
 
-body.admin-bar #offcanvas {
+body.admin-bar .offcanvas {
   margin-top: rem(46);
 
   @include media($medium-up) {
