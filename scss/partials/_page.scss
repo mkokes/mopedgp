@@ -1,13 +1,14 @@
-.page {
-  padding: rem(40);
+.post-title {
+  & a {
+    color: $white;
+  }
 }
-
 
 .post {
   background: $black;
   color: $white;
-  padding: rem(20);
   margin-bottom: rem(20);
+  padding: rem(20);
   @include background-opacity($black,.6);
   h1 {
     font-size: rem(28);
