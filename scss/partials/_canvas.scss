@@ -1,14 +1,18 @@
-.canvas {
+#wrapper {
   background: url("/wp-content/themes/mopedgp/img/bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  width: 100%;
-  z-index: -1;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
-.inner-canvas {
-  z-index: 1;
-
-  @include outer-container;
+.canvas {
+  overflow-y: scroll;
+  height: 100%;
+  transition: margin, 0.3s,linear;
+  width: 100%;
 
   &.open {
     margin-left: 75%;
@@ -17,10 +21,18 @@
       margin-left: 50%;
     }
 
+
     @include media($large-up) {
       margin-left: 25%;
     }
   }
+}
+
+
+.inner-canvas {
+  min-height: rem(700);
+  padding: rem(20) 0;
+  @include outer-container;
 }
 
 
@@ -55,6 +67,7 @@
     }
   }
 
+
   @include media($large-up) {
     display: block;
   }
@@ -88,6 +101,7 @@
     @include media($medium-up) {
       margin-left: rem(16);
     }
+
 
     &:hover {
       cursor: pointer;
@@ -150,6 +164,7 @@
     }
   }
 
+
   .top-sitelogo {
     @include span-columns(9);
     img {
@@ -177,6 +192,7 @@
     }
   }
 
+
   //Adslot
   .top-adslot {
     position: fixed;
@@ -196,28 +212,29 @@
   }
 }
 
-  //Scroll to top button
-  #scrolltotop {
-    display: none;
-    border-top: 1px solid $light-gray;
-    border-left: 1px solid $light-gray;
-    border-bottom: 1px solid $light-gray;
-    @include border-left-radius(rem(4));
-    height: rem(40);
-    width: rem(40);
-    position: fixed;
-    padding: rem(5) 0 0 rem(5);
-    right: 0;
-    top: 70%;
-    background: $offwhite;
-    &.show {
-      display: block;
-    }
 
-
-    svg {
-      height: rem(26);
-      width: rem(26);
-      fill: $medium-gray;
-    }
+//Scroll to top button
+#scrolltotop {
+  display: none;
+  border-top: 1px solid $light-gray;
+  border-left: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  @include border-left-radius(rem(4));
+  height: rem(40);
+  width: rem(40);
+  position: fixed;
+  padding: rem(5) 0 0 rem(5);
+  right: 0;
+  top: 70%;
+  background: $offwhite;
+  &.show {
+    display: block;
   }
+
+
+  svg {
+    height: rem(26);
+    width: rem(26);
+    fill: $medium-gray;
+  }
+}
