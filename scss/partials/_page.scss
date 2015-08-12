@@ -1,3 +1,9 @@
+.post-title {
+  & a {
+    color: $white;
+  }
+}
+
 .post {
   background: $black;
   color: $white;
