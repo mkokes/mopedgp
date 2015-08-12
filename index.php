@@ -27,23 +27,24 @@
 			} ?>
 			</div>
 			<div class="canvas">
+				<header class="site-header">
+					<div class="top-navicon">
+						<div class="nav-icon">
+							<div></div>
+						</div>
+					</div>
+					<div class='top-sitelogo'>
+						<a href='<?php echo esc_url( home_url() ); ?>' title='<?php echo esc_attr( get_bloginfo( ' name ', 'display ' ) ); ?>' rel='home'>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png">
+				</a>
+					</div>
+					<!--<div id="top-sitesearch">
+				<?php get_search_form( ); ?>
+			</div>-->
+				</header>
 				<div class="inner-canvas">
 
-					<header class="site-header">
-						<div class="top-navicon">
-							<div class="nav-icon">
-								<div></div>
-							</div>
-						</div>
-						<div id='top-sitelogo'>
-							<a href='<?php echo esc_url( home_url( ' / ' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( ' name ', 'display ' ) ); ?>' rel='home'>
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png">
-					</a>
-						</div>
-						<!--<div id="top-sitesearch">
-					<?php get_search_form( ); ?>
-				</div>-->
-					</header>
+
 					<div class="page">
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 							<article class="post">
@@ -60,13 +61,14 @@
 								</p>
 								<?php endif; ?>
 					</div>
-					<footer id="site-footer">
-						<div class="footer-left">&copy;
-							<?php echo date("Y"); ?> MopedGP</div>
-						<div class="footer-right"></div>
-						<?php wp_footer();?>
-					</footer>
+
 				</div>
+				<footer id="site-footer">
+					<div class="footer-left">&copy;
+						<?php echo date("Y"); ?> MopedGP</div>
+					<div class="footer-right"></div>
+					<?php wp_footer();?>
+				</footer>
 			</div>
 		</div>
 	</body>
