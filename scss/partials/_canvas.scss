@@ -35,45 +35,6 @@
   @include outer-container;
 }
 
-
-//Top Links Menu
-.links-menu-wrapper {
-  font-size: rem(14);
-  display: none;
-  padding: rem(4) 0 rem(4) rem(14);
-  .links-menu-intro {
-    display: inline;
-  }
-
-
-  .links-menu {
-    display: inline;
-    ul {
-      display: inherit;
-      li {
-        display: inherit;
-        &:after {
-          margin: 0 rem(2);
-          content: "|";
-        }
-
-
-        &:last-child {
-          &:after {
-            content: "";
-          }
-        }
-      }
-    }
-  }
-
-
-  @include media($large-up) {
-    display: block;
-  }
-}
-
-
 //Logobar
 .site-header {
   padding: rem(15);
@@ -143,19 +104,6 @@
     transform: scale(0);
   }
 
-
-  .nav-description {
-    color: $offwhite;
-    position: relative;
-    left: rem(80);
-    bottom: rem(12);
-    display: none;
-    @include media($large-up) {
-      display: block;
-    }
-  }
-
-
   .top-navicon {
     margin-top: rem(3);
     @include span-columns(2);
@@ -180,41 +128,20 @@
         fill: $white;
       }
 
-
       line {
         stroke: $white;
       }
     }
 
-
     @include media($large-up) {
       @include span-columns(6);
-    }
-  }
-
-
-  //Adslot
-  .top-adslot {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    @include media($large-up) {
-      position: static;
-      .billboard {
-        font-size: rem(40);
-        line-height: rem(250);
-        width: rem(970);
-        height: rem(250);
-        margin: rem(10) auto rem(30);
-      }
     }
   }
 }
 
 
 //Scroll to top button
-#scrolltotop {
+.scrolltotop {
   display: none;
   border-top: 1px solid $light-gray;
   border-left: 1px solid $light-gray;
