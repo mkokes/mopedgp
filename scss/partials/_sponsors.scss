@@ -1,0 +1,22 @@
+.sponsor {
+  @include clearfix;
+  .col1 {
+    @include media($medium-up) {
+    @include span-columns(6);
+  }
+  }
+
+  .col2 {
+    @include media($medium-up) {
+    @include span-columns(6);
+  }
+}
+
+  img {
+    display: block;
+    height: auto;
+    margin:0 auto;
+    max-width: rem(300);
+    width: 100%;
+  }
+}
