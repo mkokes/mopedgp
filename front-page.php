@@ -11,6 +11,34 @@
 									<?php _e( 'Sorry, no posts matched your criteria.' ); ?>
 								</p>
 								<?php endif; ?>
+								<div class="check-divider"></div>
+								<div class="widget-bar">
+									<div class="fpcol1">
+										<?php if ( is_active_sidebar( 'frontpage1' ) ) : ?>
+										    <div class="widgetarea frontpage1" >
+										        <?php dynamic_sidebar( 'frontpage1' ); ?>
+										    </div>
+										<?php endif; ?>
+									</div>
+									<div class="fpcol2">
+										<?php if ( is_active_sidebar( 'frontpage2' ) ) : ?>
+										    <div class="widgetarea frontpage2" >
+										        <?php dynamic_sidebar( 'frontpage2' ); ?>
+										    </div>
+										<?php endif; ?>
+									</div>
+									<div class="fpcol3">
+										<?php if ( is_active_sidebar( 'frontpage3' ) ) : ?>
+										    <div class="widgetarea frontpage3" >
+										        <?php dynamic_sidebar( 'frontpage3' ); ?>
+										    </div>
+										<?php endif; ?>
+									</div>
+								</div>
+								<div class="check-divider"></div>
+								<div class="fpsponsor-bar">
+									<h2>MopedGP Sponsors</h2>
+								</div>
 					</div>
 
 				</div>

@@ -7,7 +7,7 @@ Template Name: Sponsor Index
 get_header(); ?>
 				<div class="inner-canvas">
 
-					<div class="page">
+					<div class="page sponsor-">
 						<h1>Our Sponsors</h1>
 						<?php
                         $count = 0;

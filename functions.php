@@ -8,7 +8,7 @@ if (!function_exists('mopedgp_setup')) :
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
         if (!isset($content_width)) {
-            $content_width = 625;
+            $content_width = 1000;
         }
     //HTML 5 Support
         $args = array(
@@ -129,6 +129,13 @@ function better_excerpt($length = 300)
     $trimmed_text .= '...';
 
     return $trimmed_text;
+}
+/**
+* Oembed Container
+**/
+add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+function my_embed_oembed_html($html, $url, $attr, $post_id) {
+  return '<div class="oembed-outerwrap"><div class="oembed-innerwrap">' . $html . '</div></div>';
 }
 
 /**
