@@ -1,15 +1,10 @@
 <?php get_header(); ?>
 				<div class="inner-canvas">
 
-					<div class="page">
+					<div class="page front">
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 							<article class="post">
-								<h1 class="post-title">
-									<a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
-								</h1>
-								<p class="story-excerpt">
-									<?php the_excerpt();?>
-								</p>
+									<?php the_content();?>
 							</article>
 							<?php endwhile; else : ?>
 								<p>
