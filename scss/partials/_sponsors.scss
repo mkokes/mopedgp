@@ -1,0 +1,57 @@
+.sponsor {
+  @include clearfix;
+  .col1 {
+    @include media($medium-up) {
+      @include span-columns(6);
+    }
+  }
+
+
+  .col2 {
+    @include media($medium-up) {
+      @include span-columns(6);
+    }
+  }
+  .post-title {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    margin: 0 auto rem(20) auto;
+    max-width: rem(200);
+    width: 100%;
+
+    @include media($medium-up) {
+      max-width: rem(300);
+    }
+  }
+}
+
+.sponsor-website {
+  margin: rem(20) 0;
+  font-size: rem(20);
+}
+
+.social-icon {
+  margin-right: rem(10);
+
+  &.twitter svg {
+    fill: $twitter-blue;
+  }
+
+  &.facebook svg {
+    fill: $facebook-blue;
+  }
+
+  &.facebook svg,
+  &.twitter svg {
+    transition: 1s ease;
+
+    &:hover {
+      border-radius: 50%;
+      transition: 1s ease;
+    }
+  }
+}

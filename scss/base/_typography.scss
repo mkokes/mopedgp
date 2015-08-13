@@ -19,6 +19,21 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+h1 {
+  font-size: rem(40);
+}
+h2 {
+  font-size: rem(30);
+}
+h3 {
+  font-size: rem(24);
+}
+h4 {
+  font-size: rem(20);
+}
+h5 {
+  font-size: rem(18);
+}
 p {
   margin: 0 0 $small-spacing;
 }
@@ -52,4 +67,21 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+blockquote {
+  border-top: $orange solid rem(4);
+  border-bottom: $orange solid rem(4);
+  margin: rem(20) 0 rem(20) 10%;
+  padding: rem(10) 0;
+}
+
+ul,ol {
+  margin: rem(20) 0 rem(20) 5%;
+}
+ol {
+  list-style-type: decimal;
+}
+ul {
+  list-style-type: disc;
 }
