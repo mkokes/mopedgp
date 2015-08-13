@@ -1,35 +1,14 @@
-<?php
-
-/*
-Template Name: Sponsor Index
-*/
-
-get_header(); ?>
+<?php get_header(); ?>
 				<div class="inner-canvas">
 
 					<div class="page">
-						<h1>Our Sponsors</h1>
-						<?php
-                        $count = 0;
-                        // args
-                        $args = array(
-                            'posts_per_page' => -1,
-                            'post_type' => 'sponsor',
-                            'orderby' => 'rand',
-                            );
-                        // query
-                        $sponsor_query = new WP_Query($args);
-
-                        if ($sponsor_query->have_posts()):
-                            while ($sponsor_query->have_posts()) : $sponsor_query->the_post(); ++$count;
-
-                            $description = get_field('description');
-                            $website = get_field('website');
-                            $facebook = get_field('facebook');
-                            $twitter = get_field('twitter');
-                            $sponsorthumb = get_the_post_thumbnail(get_the_ID(), '');
-
-                            ?>
+						<?php if (have_posts()) : while (have_posts()) : the_post();
+                        $description = get_field('description');
+                        $website = get_field('website');
+                        $facebook = get_field('facebook');
+                        $twitter = get_field('twitter');
+                        $sponsorthumb = get_the_post_thumbnail(get_the_ID(), '');
+                        ?>
 							<article class="post sponsor">
 								<h2 class="post-title">
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
@@ -63,7 +42,7 @@ get_header(); ?>
 												<?php echo get_template_part('img/inline', 'twitter.svg');
     ?>
 											</a>
-										<?php
+										<?php 
 } ?>
 									</div>
 								</div>
