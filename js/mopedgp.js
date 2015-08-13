@@ -30,9 +30,9 @@ jQuery(document).ready(function ($) {
     }
 
     if(y >= 100) {
-      $('.logobar').addClass('fixed');
+      $('.site-header').addClass('fixed');
     } else {
-      $('.logobar').removeClass('fixed');
+      $('.site-header').removeClass('fixed');
     }
   });
 
