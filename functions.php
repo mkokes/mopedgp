@@ -77,8 +77,11 @@ if (!function_exists('mopedgp_scripts')) :
     function mopedgp_scripts()
     {
         wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400italic,300,700,400');
+        wp_enqueue_script( 'slick-script', get_template_directory_uri() . '/js/slick/slick.min.js', array('jquery'), '1.5.8', true );
+        wp_enqueue_style('slick-style', get_template_directory_uri() . '/js/slick/slick.css' );
+        wp_enqueue_style('slick-theme', get_template_directory_uri() . '/js/slick/slick-theme.css' );
         wp_enqueue_style('mopedgp-mainstyle', get_stylesheet_directory_uri().'/scss/main.min.css');
-        wp_enqueue_script('mopedgpjs', get_stylesheet_directory_uri().'/js/mopedgp.js', array('jquery'), '1.1', true);
+        wp_enqueue_script('mopedgpjs', get_stylesheet_directory_uri().'/js/mopedgp.js', array('jquery'), '1.0', true);
     }
     endif;
     add_action('wp_enqueue_scripts', 'mopedgp_scripts');

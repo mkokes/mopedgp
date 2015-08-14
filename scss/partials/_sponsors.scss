@@ -55,3 +55,14 @@
     }
   }
 }
+
+.sponsor-bar {
+  @include clearfix;
+}
+.sponsor-slide {
+  display:inline-block;
+  img {
+    max-width: rem(250);
+    height: auto;
+  }
+}

@@ -36,9 +36,7 @@
 									</div>
 								</div>
 								<div class="check-divider"></div>
-								<div class="fpsponsor-bar">
-									<h2>MopedGP Sponsors</h2>
-								</div>
+							<?php get_template_part( 'components/sponsor','slider' ); ?>
 					</div>
 
 				</div>
