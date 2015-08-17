@@ -44,13 +44,10 @@ jQuery(document).ready(function ($) {
     return false;
   });
 
-  $('.sponsor-slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 100,
-    fade: true,
-    cssEase: 'linear',
+  //Owl Carousel
+  $('.owl-carousel').owlCarousel({
     autoplay: true,
-    autoplaySpeed: 8000,
+    loop: true,
+    items: 3,
   });
 });
