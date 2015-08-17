@@ -23,23 +23,31 @@ jQuery(document).ready(function ($) {
   //Scroll to top button and fixed menu switch
   $(window).scroll(function (event) {
     var y = $(this).scrollTop();
+    console.log(y);
     if(y >= 500) {
       $('.scrolltotop').addClass('show');
     } else {
       $('.scrolltotop').removeClass('show');
     }
 
-    if(y >= 100) {
+    if (y >= 100) {
       $('.site-header').addClass('fixed');
     } else {
       $('.site-header').removeClass('fixed');
     }
   });
 
-  $('.scrolltotop').click(function () {
+  $('.scrolltotop').click(function() {
     $('html, body').animate({
       scrollTop: 0,
     }, 'slow');
     return false;
+  });
+
+  //Owl Carousel
+  $('.owl-carousel').owlCarousel({
+    autoplay: true,
+    loop: true,
+    items: 3,
   });
 });

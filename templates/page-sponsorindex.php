@@ -34,6 +34,7 @@ get_header(); ?>
 								<h2 class="post-title">
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 								</h2>
+								<div class="row">
 								<div class="col1">
 									<?php echo $sponsorthumb;?>
 								</div>
@@ -66,6 +67,7 @@ get_header(); ?>
 										<?php
 } ?>
 									</div>
+								</div>
 								</div>
 							</article>
 							<?php endwhile; else : ?>

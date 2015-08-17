@@ -13,6 +13,7 @@
 								<h2 class="post-title">
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 								</h2>
+								<div class="row">
 								<div class="col1">
 									<?php echo $sponsorthumb;?>
 								</div>
@@ -42,16 +43,20 @@
 												<?php echo get_template_part('img/inline', 'twitter.svg');
     ?>
 											</a>
-										<?php 
+										<?php
 } ?>
 									</div>
 								</div>
+								</div>
+								<div class="centertext"><a href="/sponsors/"> Back To Sponsors</a></div>
 							</article>
+
 							<?php endwhile; else : ?>
 								<p>
 									<?php _e('Sorry, no posts matched your criteria.'); ?>
 								</p>
 								<?php endif; ?>
+
 					</div>
 
 				</div>
