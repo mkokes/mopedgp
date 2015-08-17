@@ -79,8 +79,8 @@ if (!function_exists('mopedgp_scripts')) :
     {
         wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400italic,300,700,400');
         wp_enqueue_style('mopedgp-mainstyle', get_stylesheet_directory_uri().'/scss/main.min.css');
-        wp_enqueue_script('mopedgpjs', get_stylesheet_directory_uri().'/js/mopedgp.js', array('jquery'), '1.0', true);
-        wp_enqueue_script('owl-carousel', get_stylesheet_directory_uri().'/js/owl.carousel.min.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('mopedgpjs', get_stylesheet_directory_uri().'/js/mopedgp.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('owl-carousel', get_stylesheet_directory_uri().'/js/owl.carousel.min.js', array('jquery'), '1.3.3', true);
     }
     endif;
     add_action('wp_enqueue_scripts', 'mopedgp_scripts');
