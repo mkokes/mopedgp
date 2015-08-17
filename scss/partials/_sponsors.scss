@@ -43,7 +43,25 @@
 
 .social-icon {
   margin-right: rem(10);
-
+  svg {
+    background-color: $white;
+    height: rem(44);
+    width: rem(44);
+    -webkit-filter: grayscale(40%);
+    -webkit-transition: .1s ease-in-out;
+    -moz-filter: grayscale(40%);
+    -moz-transition: .1s ease-in-out;
+    -o-filter: grayscale(40%);
+    -o-transition: .1s ease-in-out;
+    &:hover {
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .1s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .1s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .1s ease-in-out;
+  }
+  }
   &.twitter svg {
     fill: $twitter-blue;
   }
@@ -52,18 +70,8 @@
   &.facebook svg {
     fill: $facebook-blue;
   }
-
-
-  &.facebook svg,
-  &.twitter svg {
-    transition: 1s ease;
-
-    &:hover {
-      border-radius: 50%;
-      transition: 1s ease;
-    }
   }
-}
+
 
 
 .sponsor-bar {
