@@ -46,8 +46,13 @@ jQuery(document).ready(function ($) {
 
   //Owl Carousel
   $('.owl-carousel').owlCarousel({
-    autoplay: true,
+    autoPlay: 2000,
+    stopOnHover: true,
     loop: true,
     items: 3,
+    itemsDesktop: [1080,4],
+    itemsDesktopSmall: [970,3],
+    itemsTablet: [784,2],
+    itemsMobile: [468,1],
   });
 });
