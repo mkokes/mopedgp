@@ -15,7 +15,7 @@
 	<body <?php body_class();?>>
 
 		<div id="wrapper">
-			<div class="offcanvas">
+			<nav class="offcanvas">
 				<?php if ( has_nav_menu( 'offcanvas' ) ) {
 					wp_nav_menu( array(
 						'theme_location' => 'offcanvas',
@@ -24,7 +24,20 @@
 						'depth' => '3',
 						'walker' => new My_Sub_Menu()) );
 			} ?>
-			</div>
+			<div class="site-social">
+					<div class="social-icon facebook">
+						<a href="https://www.facebook.com/groups/328911310627918/" title="Facebook">
+							<?php get_template_part('img/inline','facebook.svg'); ?>
+						</a>
+					</div>
+
+						<!--	<div class="social-icon twitter">
+							<a href="" title="Twitter">
+								<?php get_template_part('img/inline','twitter.svg'); ?>
+							</a>
+						</div>-->
+					</div>
+		</nav>
 			<div class="canvas">
 				<header class="site-header">
 					<div class="top-navicon">

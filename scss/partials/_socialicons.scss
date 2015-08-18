@@ -1,0 +1,31 @@
+.social-icon {
+  margin-right: rem(10);
+  display: inline-block;
+  svg {
+    background-color: $white;
+    height: rem(44);
+    width: rem(44);
+    -webkit-filter: saturate(100%);
+    -webkit-transition: .3s ease-in-out;
+    -moz-filter: saturate(100%);
+    -moz-transition: .3s ease-in-out;
+    -o-filter: saturate(100%);
+    -o-transition: .3s ease-in-out;
+    &:hover {
+    -webkit-filter: saturate(175%);
+    -webkit-transition: .3s ease-in-out;
+    -moz-filter: saturate(175%);
+    -moz-transition: .3s ease-in-out;
+    -o-filter: saturate(175%);
+    -o-transition: .3s ease-in-out;
+  }
+  }
+  &.twitter svg {
+    fill: $twitter-blue;
+  }
+
+
+  &.facebook svg {
+    fill: $facebook-blue;
+  }
+  }
