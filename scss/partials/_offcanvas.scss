@@ -163,20 +163,8 @@
 .site-social {
     margin: rem(20) auto 0;
     text-align: center;
-    
-    .social-icon {
-      height: auto;
-      margin-right: rem(10);
-      width: rem(44);
-
-      svg {
-        height: 44px;
-        width: 44px;
-      }
     }
   }
-}
-
 
 body.admin-bar .offcanvas {
   margin-top: rem(46);

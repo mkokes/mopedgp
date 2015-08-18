@@ -40,32 +40,6 @@
   font-size: rem(20);
 }
 
-
-.social-icon {
-  margin-right: rem(10);
-
-  &.twitter svg {
-    fill: $twitter-blue;
-  }
-
-
-  &.facebook svg {
-    fill: $facebook-blue;
-  }
-
-
-  &.facebook svg,
-  &.twitter svg {
-    transition: 1s ease;
-
-    &:hover {
-      border-radius: 50%;
-      transition: 1s ease;
-    }
-  }
-}
-
-
 .sponsor-bar {
   @include clearfix;
 }
