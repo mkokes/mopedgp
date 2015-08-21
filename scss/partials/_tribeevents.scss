@@ -1,9 +1,16 @@
 #tribe-events {
   background-color: $black;
-  padding:rem(20);
+  color: $offwhite;
+  padding: 0 rem(20);
+  margin: 0;
+}
+
+.tribe-events-list-separator-month span {
+  background-color: $black;
   color: $offwhite;
 }
-.tribe-events-list-separator-month span{
-  background-color: $black;
-  color: $offwhite
+
+.single-tribe_events .tribe-events-event-meta {
+  background: $black;
+  border: 1px solid $offwhite;
 }

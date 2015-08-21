@@ -1,5 +1,5 @@
 .post-title {
-  & a {
+  &a {
     color: $white;
   }
 }
@@ -9,6 +9,7 @@
   color: $white;
   margin-bottom: rem(20);
   padding: rem(20);
+
   @include background-opacity($black,.6);
   h1 {
     font-size: rem(44);
@@ -16,23 +17,42 @@
 }
 
 .oembed-outerwrap {
-  width: rem(1080);
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
+  width: rem(1080);
   z-index: 1
 }
 
 .oembed-innerwrap {
-  position: relative;
-  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 
-  iframe, object, embed {
+  iframe,
+  object,
+  embed {
+    height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+  }
+}
+
+.row {
+  @include clearfix;
+}
+
+.col6 {
+  width: 100%;
+
+  @include media($medium-up) {
+    float: right;
+    width: 50%;
+  }
+
+  figure {
+    margin: 0 auto;
   }
 }
